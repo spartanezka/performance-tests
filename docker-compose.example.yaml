@@ -1,0 +1,15 @@
+services:
+  script:
+    build:
+      context: .
+      dockerfile: Dockerfile.compose-example
+    networks:
+      - default
+
+  redis:
+    image: redis:alpine
+    networks:
+      - default
+
+networks:
+  default:
