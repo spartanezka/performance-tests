@@ -28,6 +28,7 @@ ignore = [
     "D212", # `multi-line-summary-first-line`
     "D213", # `multi-line-summary-second-line`
     "D100", # Missing docstring in public module
+    "D102", # Missing docstring in public method
     "D103", # Missing docstring in public function
     "D104", # Missing docstring in public package
     "D107", # Missing docstring in `__init__`
