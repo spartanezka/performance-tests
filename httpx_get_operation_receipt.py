@@ -36,12 +36,11 @@ purchase_operation_response = httpx.post(
     json=purchase_operation_payload,
 )
 purchase_operation_response_data = purchase_operation_response.json()
-print(purchase_operation_response_data)
 
 # Шаг 4: получаем чек
 operation_receipt_response = httpx.get(
     f"http://localhost:8003/api/v1/operations/operation-receipt/"
-    f"{purchase_operation_response_data["operation"]["id"]}",
+    f"{purchase_operation_response_data['operation']['id']}",
 )
 operation_receipt_response_data = operation_receipt_response.json()
 
