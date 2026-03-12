@@ -23,6 +23,10 @@ preview = true
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
+    "D203", # `incorrect-blank-line-before-class`
+    "D211", # `no-blank-line-before-class`
+    "D212", # `multi-line-summary-first-line`
+    "D213", # `multi-line-summary-second-line`
     "D100", # Missing docstring in public module
     "D103", # Missing docstring in public function
     "D104", # Missing docstring in public package
