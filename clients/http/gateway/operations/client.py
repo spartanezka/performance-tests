@@ -310,7 +310,8 @@ class OperationsGatewayHTTPClient(HTTPClient):
         response = self.make_purchase_operation_api(request)
         return response.json()
 
-    def make_bill_payment_operation(self, card_id: str, account_id: str) -> MakeBillPaymentOperationResponseDict:
+    def make_bill_payment_operation(self, card_id: str,
+                                    account_id: str) -> MakeBillPaymentOperationResponseDict:
         request = MakeBillPaymentOperationRequestDict(
             status="COMPLETED",
             amount=1000.00,
@@ -320,7 +321,8 @@ class OperationsGatewayHTTPClient(HTTPClient):
         response = self.make_bill_payment_operation_api(request)
         return response.json()
 
-    def make_cash_withdrawal_operation(self, card_id: str, account_id: str) -> MakeCashWithdrawalOperationResponseDict:
+    def make_cash_withdrawal_operation(self, card_id: str,
+                                       account_id: str) -> MakeCashWithdrawalOperationResponseDict:
         request = MakeCashWithdrawalOperationRequestDict(
             status="COMPLETED",
             amount=500.00,

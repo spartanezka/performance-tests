@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "httpx==0.28.1",
+    "pydantic[email]==2.12.5",
 ]
 
 [dependency-groups]
@@ -28,6 +29,7 @@ ignore = [
     "D212", # `multi-line-summary-first-line`
     "D213", # `multi-line-summary-second-line`
     "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
     "D102", # Missing docstring in public method
     "D103", # Missing docstring in public function
     "D104", # Missing docstring in public package
