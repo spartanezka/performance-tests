@@ -7,11 +7,10 @@ accounts_client = build_accounts_gateway_http_client()
 documents_client = build_documents_gateway_http_client()
 
 create_user_response = users_client.create_user()
-user_id = create_user_response["user"]["id"]
 print(f"Create user response: {create_user_response}")
 
-account_response = accounts_client.open_credit_card_account(user_id)
-account_id = account_response["account"]["id"]
+account_response = accounts_client.open_credit_card_account(create_user_response.user.id)
+account_id = account_response.account.id
 print(f"Open credit card account response: {account_response}")
 
 tariff_response = documents_client.get_tariff_document(account_id)
