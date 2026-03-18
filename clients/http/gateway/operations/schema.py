@@ -2,6 +2,8 @@ from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from tools.fakers import fake
+
 
 class OperationType(StrEnum):
     """Тип операции."""
@@ -63,8 +65,8 @@ class BaseOperationRequestSchema(BaseModel):
 
     model_config = ConfigDict(populate_by_name=True)
 
-    status: OperationStatus
-    amount: float
+    status: OperationStatus = Field(default_factory=lambda: fake.enum(OperationStatus))
+    amount: float = Field(default_factory=fake.amount)
     card_id: str = Field(alias="cardId")
     account_id: str = Field(alias="accountId")
 
@@ -98,7 +100,7 @@ class MakePurchaseOperationRequestSchema(BaseOperationRequestSchema):
 
     model_config = ConfigDict(populate_by_name=True)
 
-    category: str
+    category: str = Field(default_factory=fake.category)
 
 
 class GetOperationsQuerySchema(BaseModel):
