@@ -1,3 +1,4 @@
+from datetime import datetime
 from enum import StrEnum
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -37,7 +38,7 @@ class OperationSchema(BaseModel):
     amount: float
     card_id: str = Field(alias="cardId")
     category: str
-    created_at: str = Field(alias="createdAt")
+    created_at: datetime = Field(alias="createdAt")
     account_id: str = Field(alias="accountId")
 
 
