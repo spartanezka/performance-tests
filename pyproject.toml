@@ -25,6 +25,7 @@ dev = [
 target-version = "py312"
 line-length = 110
 exclude = [
+    "contracts/",
     "*.proto",
     "**/*_pb2.py",
     "**/*_pb2_grpc.py",
